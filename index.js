@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const signupRoute = require("./routes/register.route");
+const flight = require("./routes/flight.route");
 const { checkLogin } = require("./middlewares/checkLogion");
 // middleware
 app.use(express.json());
 app.use(cors());
 app.use("/api/v1/user", signupRoute);
+app.use("/api/v1/flight", flight);
 
 // public route test
 app.get("/", (req, res) => {
