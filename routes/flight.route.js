@@ -1,8 +1,11 @@
 const express = require("express");
-const { flight } = require("../controller/flight.controller");
+const { flight, singleFlight } = require("../controller/flight.controller");
+const { checkLogin } = require("../middlewares/checkLogion");
 
 const route = express.Router();
 
-route.get("/", flight);
+route.route("/").get(flight);
+
+route.get("/:id",checkLogin, singleFlight);
 
 module.exports = route;
