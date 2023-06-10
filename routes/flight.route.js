@@ -4,8 +4,8 @@ const { checkLogin } = require("../middlewares/checkLogion");
 
 const route = express.Router();
 
-route.route("/").get(flight);
+route.route("/").get(checkLogin, flight);
 
-route.get("/:id",checkLogin, singleFlight);
+route.get("/:id", checkLogin, singleFlight);
 
 module.exports = route;
