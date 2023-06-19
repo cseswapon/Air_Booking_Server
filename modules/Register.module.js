@@ -36,16 +36,16 @@ const schema = mongoose.Schema(
     },
     contactNumber: {
       type: String,
-        require: true,
-      maxLength:11
+      require: true,
+      maxLength: 11,
     },
     email: {
       type: String,
       unique: [true, "Please Provide Unique Email"],
       require: true,
       validate: [validator.isEmail, "Please Provide Your Valid Email"],
-        lowercase: true,
-      message:"Email {VALUES}"
+      lowercase: true,
+      message: "Email {VALUES}",
     },
     password: {
       type: String,
