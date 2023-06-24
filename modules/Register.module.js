@@ -51,6 +51,9 @@ const schema = mongoose.Schema(
       type: String,
       require: true,
     },
+    image: {
+      type: String,
+    },
     status: {
       type: String,
       enum: ["active", "inactive"],

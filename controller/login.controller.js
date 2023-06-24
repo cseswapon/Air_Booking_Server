@@ -30,6 +30,7 @@ module.exports.userLogin = async (req, res) => {
             contactNumber: user.contactNumber,
             status: user.status,
             role: user.role,
+            image: user.image || null
           },
           message: "Login Successfully",
         });
